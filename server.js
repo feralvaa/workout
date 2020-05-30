@@ -13,19 +13,10 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-// mongoose.connect("mongodb://user1:Doctor01%@ds141320.mlab.com:41320/heroku_9j2mt0rb", {
-//   useNewUrlParser: true,
-//   useFindAndModify: false
-// });
-
-mongoose.Promise = global.Promise;
-
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://user1:Doctor01%@ds141320.mlab.com:41320/heroku_9j2mt0rb",
-  {
-    useMongoClient= true
-  }
-);
+mongoose.connect(process.env.MONGODB_URI ||"mongodb://user1:Doctor01%@ds141320.mlab.com:41320/heroku_9j2mt0rb", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
 
 
 // routes
